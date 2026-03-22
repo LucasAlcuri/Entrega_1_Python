@@ -10,7 +10,6 @@ words = [
     "lista",
     ]
 
-
 word = random.choice(words)
 guessed = []
 attempts = 6
@@ -38,6 +37,13 @@ while attempts > 0:
     
     letter = input("Ingresá una letra: ")
     
+    while True:
+        if len(letter) > 1 or not letter.isalpha():
+            print("Caracter invalido intente de nuevo")
+            letter = input("Ingresá una letra: ")
+        else:
+            break    
+
     if letter in guessed:
         print("Ya usaste esa letra.")
     elif letter in word:
